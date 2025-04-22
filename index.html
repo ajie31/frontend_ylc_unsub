@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Preferences - Seniors Discount Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <img src="public/ylc_logo.png" alt="Seniors Discount Club Logo" />
+      <!-- IMPORTANT: Replace src with your actual logo URL -->
+    </header>
+
+    <main class="container">
+      <h1>
+        You're Unsubscribed –
+        <span class="highlight">But You Have Options</span>
+      </h1>
+      <h5 class="subtitle">
+        <!-- Here is update from Ash applied -->
+        We would love you to stick around. If you’d like fewer emails (or to
+        resubscribe), just choose the option that suits you best.
+      </h5>
+
+      <form action="#" method="post">
+        <!-- Add your form action URL here -->
+        <div class="options-grid">
+          <label for="resubscribe" class="option-card">
+            <input
+              type="radio"
+              id="resubscribe"
+              name="subscription_preference"
+              value="all"
+            />
+
+            <h5 class="option-title">
+              Resubscribe to eveything - Morning & Afternoon
+            </h5>
+            <span class="option-description"
+              >You'll get both daily editions just like before</span
+            >
+          </label>
+
+          <label for="once_day" class="option-card">
+            <input
+              type="radio"
+              id="once_day"
+              name="subscription_preference"
+              value="morning"
+            />
+
+            <h5 class="option-title">Once a day – Morning only</h5>
+            <span class="option-description"
+              >Just one morning email with the latest stories.</span
+            >
+          </label>
+
+          <label for="once_week" class="option-card">
+            <input
+              type="radio"
+              id="once_week"
+              name="subscription_preference"
+              value="sunday"
+              checked
+            />
+            <!-- Default checked here -->
+
+            <h5 class="option-title">Once a week – Sundays only</h5>
+            <span class="option-description"
+              >One easy-to-read summary every Sunday.</span
+            >
+          </label>
+
+          <label for="unsubscribed" class="option-card">
+            <input
+              type="radio"
+              id="unsubscribed"
+              name="subscription_preference"
+              value="none"
+            />
+
+            <h5 class="option-title">Stay unsubscribed</h5>
+            <span class="option-description"
+              >You won't receive any more emails from us.</span
+            >
+          </label>
+        </div>
+
+        <div class="button-group">
+          <button type="submit" class="btn btn-primary">
+            <h5><i>Update</i> My Email Preferences</h5>
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            onclick="window.open('https://seniorsdiscountclub.com.au/misc/contact', '_blank')"
+          >
+            <h5>Send us a message</h5>
+          </button>
+          <!-- Use type="button" if it doesn't submit the form, or change to an <a> link if needed -->
+        </div>
+      </form>
+
+      <p class="footer-note">You can change your preferences at any time.</p>
+    </main>
+
+    <script src="script.js"></script>
+    <!-- Link to the JavaScript file -->
+  </body>
+</html>

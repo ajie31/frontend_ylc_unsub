@@ -1,0 +1,285 @@
+:root {
+  --primary-color: #ef1b33;
+  --secondary-color: #5b5b5b;
+  --secondary-color-2: #7d7d7d;
+  --main-text-color: #383838; /* Blue color */
+  --accent-color: #ef1b33; /* Pink color */
+  --background-color: #f4f4f4; /* Light grey background */
+  --background-light-color: #fff; /* White background */
+  --gradient-bg-color: linear-gradient(180deg, #dfdfdf 0%, #f4f4f4 100%);
+  --border-radius: 1.25rem;
+  --border-thickness: 2px;
+}
+/* Basic Reset & Defaults */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: var(--background-color); /* Light grey background */
+
+  padding-bottom: 40px;
+}
+button {
+  font-family: "Roboto", sans-serif;
+}
+
+/* Header */
+.site-header {
+  background-color: #fff; /* White header background */
+  padding: 1.127rem 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.site-header img {
+  max-height: 36px; /* Adjust as needed */
+  width: auto;
+}
+
+/* Main Container */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.875rem;
+  line-height: 40px;
+  color: var(--main-text-color);
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 1.25rem;
+  color: var(--main-text-color);
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.container > h1 {
+  margin-bottom: 10px;
+}
+
+.container > h1 .highlight {
+  color: var(--accent-color); /* Adjust purple color if needed */
+}
+
+h5.subtitle {
+  margin-bottom: 1.55rem;
+  font-weight: 400;
+}
+
+/* Options Grid */
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+  gap: 16px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+/* Option Card Styling */
+.option-card {
+  cursor: pointer;
+
+  width: 237px;
+  height: 229px;
+  background-color: var(--background-light-color);
+  border-radius: var(--border-radius);
+  padding: 1.25rem; /* 20px padding */
+  border: 2px solid #ddd; /* Grey border */
+
+  display: flex; /* Use flex to align radio and label */
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the top */
+  gap: 0; /* Space between radio and text */
+  transition: border-color 0.3s ease;
+  position: relative; /* Needed for potential absolute positioning inside if required */
+}
+
+/* Style the selected option card */
+.option-card.selected-option {
+  border: 2px solid var(--accent-color); /* Blue border for the selected option */
+}
+
+.option-title.selected-title {
+  color: var(--accent-color); /* Change title color for selected option */
+}
+
+/* Style the radio button */
+.option-card input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none; /* For older browsers */
+  border: 3px solid var(--secondary-color-2); /* Border color */
+  border-radius: 50%; /* Circular shape */
+  margin-top: 5px; /* Align roughly with the first line of text */
+  margin-bottom: 0.95rem; /* Space between radio and text */
+  flex-shrink: 0; /* Prevent radio from shrinking */
+  /* Basic sizing if needed */
+  width: 23px;
+  height: 23px;
+  cursor: pointer;
+  display: flex; /* Make it a flex container */
+  align-items: center; /* Vertical centering */
+  justify-content: center; /* Horizontal centering */
+}
+.option-card input[type="radio"]:checked {
+  border: 2.5px solid var(--accent-color); /* Pink border */
+}
+input[type="radio"]:checked::before {
+  content: "";
+  display: block;
+  width: 13px;
+  height: 13px;
+  margin: auto;
+  border-radius: 50%;
+  background-color: var(--accent-color); /* Inner circle color */
+}
+
+.option-card label {
+  display: flex;
+  flex-direction: column; /* Stack title and description */
+  cursor: pointer;
+  width: 100%; /* Make label take full width for easier clicking */
+}
+
+h5.option-title {
+  margin-bottom: 5px;
+}
+
+span.option-description {
+  font-size: 1.125rem;
+  color: var(--main-text-color);
+  line-height: 28px;
+  font-weight: 400;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 1.25rem; /* Space between button group and footer */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens if needed */
+}
+
+.btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px; /* Rounded buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none; /* For potential <a> tags styled as buttons */
+  display: inline-block; /* Proper alignment and sizing */
+}
+
+.btn-primary {
+  background-color: var(--primary-color); /* Pink color */
+}
+.btn-primary > h5 {
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #bd3773; /* Darker pink on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background-color: #fff;
+  border: 2px solid var(--secondary-color-2);
+  flex-basis: 26.125%;
+}
+.btn-secondary > h5 {
+  color: var(--secondary-color);
+}
+.btn-secondary:hover {
+  background-color: #f0f0f0;
+  border-color: #bbb;
+}
+
+/* Footer Note */
+.footer-note {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--main-text-color);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 991px) {
+  /* Adjust breakpoint as needed, e.g. for tablets */
+  .container {
+    padding: 0 1rem; /* Add some padding on mobile */
+    max-width: 100%; /* Full width on mobile */
+  }
+
+  .options-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+  }
+  .option-card {
+    width: 100%; /* Full width on tablet */
+    height: auto; /* Auto height to fit content */
+  }
+  .btn-secondary {
+    flex-basis: 35%; /* Full width on tablet */
+  }
+}
+
+@media (max-width: 767px) {
+  /* Mobile devices */
+  .site-header {
+    padding: 0.75rem 0; /* Less padding on mobile */
+    margin-bottom: 1.25rem; /* Less margin on mobile */
+  }
+  .site-header img {
+    max-height: 27px;
+  }
+  .container {
+    padding: 0 1rem; /* Add some padding on mobile */
+    max-width: 100%; /* Full width on mobile */
+  }
+
+  .container > h1 {
+    font-size: 1.75rem; /* Adjust font size for mobile */
+    margin-bottom: 1rem;
+  }
+  h5.subtitle {
+    margin-bottom: 1.25rem; /* Less margin on mobile */
+    font-weight: 700;
+  }
+  .options-grid {
+    grid-template-columns: 1fr; /* Stack options vertically */
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .option-card {
+    width: 100%; /* Full width on mobile */
+    height: auto; /* Auto height to fit content */
+    padding: 1rem; /* Adjust padding for mobile */
+  }
+  .button-group {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: stretch; /* Make buttons full width */
+  }
+
+  .btn {
+    width: 100%; /* Make buttons take full width */
+    max-width: 350px; /* Optional: limit max button width */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn-secondary {
+    max-width: 271px;
+  }
+}
