@@ -82,7 +82,7 @@ h5.subtitle {
 /* Options Grid */
 .options-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+  grid-template-columns: repeat(3, 1fr); /* 4 columns on desktop */
   gap: 16px;
   margin-bottom: 25px;
   text-align: left;
@@ -92,15 +92,15 @@ h5.subtitle {
 .option-card {
   cursor: pointer;
 
-  width: 237px;
-  height: 229px;
+  width: 320px;
+  height: 162px;
   background-color: var(--background-light-color);
   border-radius: var(--border-radius);
   padding: 1.25rem; /* 20px padding */
   border: 2px solid #ddd; /* Grey border */
 
   display: flex; /* Use flex to align radio and label */
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start; /* Align items to the top */
   gap: 0; /* Space between radio and text */
   transition: border-color 0.3s ease;
@@ -122,8 +122,8 @@ h5.subtitle {
   -webkit-appearance: none; /* For older browsers */
   border: 3px solid var(--secondary-color-2); /* Border color */
   border-radius: 50%; /* Circular shape */
-  margin-top: 5px; /* Align roughly with the first line of text */
-  margin-bottom: 0.95rem; /* Space between radio and text */
+  margin-right: 14px; /* Align roughly with the first line of text */
+  margin-top: 5px;
   flex-shrink: 0; /* Prevent radio from shrinking */
   /* Basic sizing if needed */
   width: 23px;
@@ -196,7 +196,7 @@ span.option-description {
 }
 
 .btn-secondary {
-  background-color: #fff;
+  background-color: var(--background-color);
   border: 2px solid var(--secondary-color-2);
   flex-basis: 26.125%;
 }
@@ -214,6 +214,10 @@ span.option-description {
   font-weight: 400;
   line-height: 28px;
   color: var(--main-text-color);
+}
+.contact-url {
+  color: var(--accent-color);
+  font-weight: 700;
 }
 
 /* --- Mobile Responsiveness --- */
@@ -251,12 +255,21 @@ span.option-description {
   }
 
   .container > h1 {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
     font-size: 1.75rem; /* Adjust font size for mobile */
     margin-bottom: 1rem;
   }
+  h5 {
+    font-size: 1.125rem; /* Adjust font size for mobile */
+    line-height: 28px; /* Adjust line height for mobile */
+  }
+
   h5.subtitle {
+    font-family: "Nunito Sans", sans-serif;
     margin-bottom: 1.25rem; /* Less margin on mobile */
-    font-weight: 700;
+    line-height: 28px;
+    font-weight: 400;
   }
   .options-grid {
     grid-template-columns: 1fr; /* Stack options vertically */
@@ -272,7 +285,9 @@ span.option-description {
     flex-direction: column; /* Stack buttons vertically */
     align-items: stretch; /* Make buttons full width */
   }
-
+  button > h5 {
+    font-family: "Nunito Sans", sans-serif;
+  }
   .btn {
     width: 100%; /* Make buttons take full width */
     max-width: 350px; /* Optional: limit max button width */
