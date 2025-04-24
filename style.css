@@ -78,7 +78,22 @@ h5.subtitle {
   margin-bottom: 25px;
   font-weight: 400;
 }
-
+p.note {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--main-text-color);
+  margin-bottom: 1.875rem;
+}
+p.note.first-line {
+  margin-bottom: 1rem;
+}
+p.note.update {
+  margin-bottom: 3rem;
+}
+h1.note {
+  font-family: "Roboto", sans-serif;
+}
 /* Options Grid */
 .options-grid {
   display: grid;
@@ -271,6 +286,7 @@ span.option-description {
     line-height: 28px;
     font-weight: 400;
   }
+
   .options-grid {
     grid-template-columns: 1fr; /* Stack options vertically */
     gap: 1rem;
